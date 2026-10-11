@@ -14,7 +14,7 @@ hl.window_rule({
 
 -- Gaming
 local gamingApps = "^(steam_app_[0-9]+|gamescope|[Oo]verwatch.*)$"
-local gamingWorkspace = "name:gaming"
+local gamingWorkspace = "10"
 
 -- Launchers & Tools (Battle.net)
 hl.window_rule({ match = { class = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1, float = true, center = true, size = { 1280, 720 } })
