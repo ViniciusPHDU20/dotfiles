@@ -16,9 +16,10 @@ end
 -- Window manipulation
 hl.bind(mainMod .. " + Escape",      hl.dsp.exec_cmd("hyprctl kill"))
 hl.bind(mainMod .. " + Q",           hl.dsp.window.close())
+hl.bind(mainMod .. " + Space",       hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + D",           hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + SHIFT + F",   hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
 
 -- Change focus
@@ -79,19 +80,25 @@ hl.bind(mainMod .. " + code:86", function() zoomfunction(0.3) end, { repeating =
 ---- LAUNCHER ----
 ------------------
 
-hl.bind(mainMod .. " + Return",     hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
-hl.bind(mainMod .. " + E",          hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
-hl.bind(mainMod .. " + T",          hl.dsp.exec_cmd(launchPrefix .. EDITOR))
-hl.bind(mainMod .. " + C",          hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
-hl.bind("XF86Calculator",           hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
-hl.bind(mainMod .. " + W",          hl.dsp.exec_cmd(launchPrefix .. BROWSER))
-hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
-hl.bind(mainMod .. " + Z",          hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
-hl.bind(mainMod .. " + X",          hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center"))
-hl.bind(mainMod .. " + Space",      hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
-hl.bind(mainMod .. " + period",     hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
-hl.bind(mainMod .. " + L",          hl.dsp.exec_cmd(noctCall .. "session lock"))
-hl.bind(mainMod .. " + ALT + C",    hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
+hl.bind(mainMod .. " + Return",        hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
+hl.bind(mainMod .. " + D",             hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + E",             hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
+hl.bind(mainMod .. " + B",             hl.dsp.exec_cmd(launchPrefix .. BROWSER))
+hl.bind(mainMod .. " + T",             hl.dsp.exec_cmd(launchPrefix .. EDITOR))
+hl.bind(mainMod .. " + C",             hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
+hl.bind("XF86Calculator",              hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
+hl.bind("CONTROL + SHIFT + Escape",    hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
+hl.bind(mainMod .. " + Z",             hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
+hl.bind(mainMod .. " + X",             hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center"))
+hl.bind(mainMod .. " + period",        hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
+hl.bind(mainMod .. " + ALT + E",       hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
+
+-- Session & Lock (JaKooLit defaults: Ctrl+Alt+L and Ctrl+Alt+Delete)
+hl.bind(mainMod .. " + L",             hl.dsp.exec_cmd(noctCall .. "session lock"))
+hl.bind("CONTROL + ALT + L",           hl.dsp.exec_cmd(noctCall .. "session lock"))
+hl.bind("CONTROL + ALT + Delete",      hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
+hl.bind("CONTROL + ALT + P",           hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
+hl.bind(mainMod .. " + ALT + C",       hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
 
 ---------------------------
 ---- HARDWARE CONTROLS ----
@@ -122,19 +129,26 @@ hl.bind(mainMod .. " + P",     hl.dsp.exec_cmd("hyprpicker -a -n"))
 hl.bind("Print",               hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(noctCall .. "screenshot-fullscreen"))
 
--- Theming and Wallpaper
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(noctCall .. "panel-toggle wallpaper"))
-hl.bind(mainMod .. " + ALT + W",   hl.dsp.exec_cmd(noctCall .. "wallpaper-random"))
+-- Theming and Wallpaper (JaKooLit: Super+W for wallpaper select, Super+Alt+W for random)
+hl.bind(mainMod .. " + W",             hl.dsp.exec_cmd(noctCall .. "panel-toggle wallpaper"))
+hl.bind(mainMod .. " + SHIFT + W",     hl.dsp.exec_cmd(noctCall .. "panel-toggle wallpaper"))
+hl.bind(mainMod .. " + ALT + W",       hl.dsp.exec_cmd(noctCall .. "wallpaper-random"))
+hl.bind("CONTROL + ALT + W",           hl.dsp.exec_cmd(noctCall .. "wallpaper-random"))
 
--- Game Mode (JaKooLit zero-latency gaming switch)
-hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
-hl.bind(mainMod .. " + G",  hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
+-- Game Mode (JaKooLit: Super+Shift+G or Super+G)
+hl.bind(mainMod .. " + SHIFT + G",     hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
+hl.bind(mainMod .. " + G",             hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
+hl.bind(mainMod .. " + F1",            hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
 
--- Clipboard
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard"))
+-- Clipboard (JaKooLit: Super+V or Super+Alt+V)
+hl.bind(mainMod .. " + V",             hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard"))
+hl.bind(mainMod .. " + ALT + V",       hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard"))
 
--- Notifications
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"))
+-- Refresh UI (JaKooLit: Super+Alt+R)
+hl.bind(mainMod .. " + ALT + R",       hl.dsp.exec_cmd(noctCall .. "templates-apply"))
+
+-- Notifications / Overview
+hl.bind(mainMod .. " + A",             hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"))
 
 -------------------------------
 ---- WORKSPACES & MONITORS ----
