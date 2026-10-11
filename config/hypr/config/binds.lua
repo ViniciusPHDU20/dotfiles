@@ -124,6 +124,11 @@ hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(noctCall .. "screenshot-fullscree
 
 -- Theming and Wallpaper
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(noctCall .. "panel-toggle wallpaper"))
+hl.bind(mainMod .. " + ALT + W",   hl.dsp.exec_cmd(noctCall .. "wallpaper-random"))
+
+-- Game Mode (JaKooLit zero-latency gaming switch)
+hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
+hl.bind(mainMod .. " + G",  hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))
 
 -- Clipboard
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard"))
