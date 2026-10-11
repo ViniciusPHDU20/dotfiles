@@ -13,12 +13,13 @@ hl.window_rule({
 })
 
 -- Gaming
-local gamingApps = "^(steam_app_[0-9]+|gamescope)$"
+local gamingApps = "^(steam_app_[0-9]+|gamescope|[Oo]verwatch.*)$"
 local gamingWorkspace = "name:gaming"
 
 -- Launchers & Tools (Battle.net)
 hl.window_rule({ match = { title = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1 })
 hl.window_rule({ match = { initial_title = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1 })
+hl.window_rule({ match = { title = "^([Oo]verwatch.*)$" }, workspace = gamingWorkspace, content = "game", fullscreen_state = 2, sync_fullscreen = true })
 
 hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
 hl.window_rule({ match = { xdg_tag = "^(.*game.*)$" }, workspace = gamingWorkspace, fullscreen_state = 2, content = "game", sync_fullscreen = true })
