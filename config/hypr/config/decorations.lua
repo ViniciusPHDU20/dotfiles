@@ -1,4 +1,9 @@
 -- Look and feel configuration
+pcall(require, "config.colors_dynamic")
+
+local active1 = DYNAMIC_ACTIVE_1 or CACHYLGREEN
+local active2 = DYNAMIC_ACTIVE_2 or CACHYDGREEN
+local inactive = DYNAMIC_INACTIVE or CACHYGRAY
 
 hl.config({
     general = {
@@ -9,25 +14,25 @@ hl.config({
         resize_on_border = true,
         col = {
             active_border = {
-                colors = { CACHYLGREEN, CACHYDGREEN },
+                colors = { active1, active2 },
                 angle = 45,
             },
-            inactive_border = CACHYGRAY,
+            inactive_border = inactive,
         },
     },
     group = {
         col = {
-            border_active = CACHYLBLUE,
-            border_inactive = CACHYGRAY,
-            border_locked_active = CACHYDBLUE,
-            border_locked_inactive = CACHYGRAY,
+            border_active = active1,
+            border_inactive = inactive,
+            border_locked_active = active2,
+            border_locked_inactive = inactive,
         },
         groupbar = {
             col = {
-                active = CACHYLGREEN,
-                inactive = CACHYGRAY,
-                locked_active = CACHYDBLUE,
-                locked_inactive = CACHYGRAY,
+                active = active1,
+                inactive = inactive,
+                locked_active = active2,
+                locked_inactive = inactive,
             },
         },
     },
