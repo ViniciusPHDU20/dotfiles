@@ -17,8 +17,10 @@ local gamingApps = "^(steam_app_[0-9]+|gamescope|[Oo]verwatch.*)$"
 local gamingWorkspace = "name:gaming"
 
 -- Launchers & Tools (Battle.net)
-hl.window_rule({ match = { title = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1 })
-hl.window_rule({ match = { initial_title = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1 })
+hl.window_rule({ match = { class = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1, float = true, center = true, size = { 1280, 720 } })
+hl.window_rule({ match = { initial_class = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1, float = true, center = true, size = { 1280, 720 } })
+hl.window_rule({ match = { title = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1, float = true, center = true, size = { 1280, 720 } })
+hl.window_rule({ match = { initial_title = "^(.*[Bb]attle\\.net.*)$" }, workspace = 1, float = true, center = true, size = { 1280, 720 } })
 hl.window_rule({ match = { title = "^([Oo]verwatch.*)$" }, workspace = gamingWorkspace, content = "game", fullscreen_state = 2, sync_fullscreen = true })
 
 hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
@@ -40,7 +42,7 @@ hl.window_rule({
 })
 hl.window_rule({
     match = {
-        class         = "^(steam_app.*)$",
+        class         = "^(steam_app_[0-9]+)$",
         initial_title = "^$",
     },
     center           = true,
@@ -48,6 +50,14 @@ hl.window_rule({
     fullscreen       = false,
     fullscreen_state = 0,
     workspace        = gamingWorkspace,
+})
+
+-- Faugus Launcher wine wrappers (Battle.net)
+hl.window_rule({
+    match = { class = "^(steam_app_default)$" },
+    workspace = 1,
+    float = true,
+    center = true,
 })
 
 -- Apps
