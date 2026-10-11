@@ -147,8 +147,9 @@ hl.bind(mainMod .. " + ALT + V",       hl.dsp.exec_cmd(noctCall .. "panel-toggle
 -- Refresh UI (JaKooLit: Super+Alt+R)
 hl.bind(mainMod .. " + ALT + R",       hl.dsp.exec_cmd(noctCall .. "templates-apply"))
 
--- Notifications / Overview
-hl.bind(mainMod .. " + A",             hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"))
+-- Overview / Window Expose (JaKooLit: Super+A - Drag and Drop Workspace Overview)
+hl.bind(mainMod .. " + A",             hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/OverviewToggle.sh"))
+hl.bind(mainMod .. " + SHIFT + N",     hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"))
 
 -------------------------------
 ---- WORKSPACES & MONITORS ----

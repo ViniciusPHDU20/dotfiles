@@ -35,6 +35,7 @@ link_config "$DOTFILES_DIR/config/noctalia" "$HOME/.config/noctalia"
 link_config "$DOTFILES_DIR/config/kitty" "$HOME/.config/kitty"
 link_config "$DOTFILES_DIR/config/fish" "$HOME/.config/fish"
 link_config "$DOTFILES_DIR/config/fastfetch" "$HOME/.config/fastfetch"
+link_config "$DOTFILES_DIR/config/quickshell" "$HOME/.config/quickshell"
 
 # Linkar wallpapers
 ln -sfn "$DOTFILES_DIR/wallpapers" "$HOME/Pictures/wallpapers" 2>/dev/null || true
