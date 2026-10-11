@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# DynamicThemeWatcher - Listens for Noctalia wallpaper palette changes
-# and triggers DynamicThemeSync to update Hyprland borders in real-time.
+# DynamicThemeWatcher - Watches Noctalia theme output and syncs Hyprland & Kitty
+# Zero-reload, zero-crash, purely reactive IPC updates.
 # ==============================================================================
-set -euo pipefail
+THEME_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/kitty/themes"
+THEME_FILE="$THEME_DIR/noctalia.conf"
+SYNC_SCRIPT="$HOME/dotfiles/scripts/DynamicThemeSync.sh"
 
-KITTY_THEME_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/kitty/themes"
-KITTY_THEME="${KITTY_THEME_DIR}/noctalia.conf"
-SYNC_SCRIPT="${HOME}/dotfiles/scripts/DynamicThemeSync.sh"
+# Ensure dir and file exist
+mkdir -p "$THEME_DIR"
+touch "$THEME_FILE"
 
-mkdir -p "$KITTY_THEME_DIR"
-[ -f "$KITTY_THEME" ] || touch "$KITTY_THEME"
-
-# Initial sync
+# Initial synchronization
 "$SYNC_SCRIPT" || true
 
-# Watch for file modifications
-while inotifywait -q -e close_write,create "$KITTY_THEME"; do
-    sleep 0.1
-    "$SYNC_SCRIPT" || true
+# Continuous monitor loop
+inotifywait -m -q -e close_write,moved_to --format "%f" "$THEME_DIR" 2>/dev/null | while read -r file; do
+    if [ "$file" = "noctalia.conf" ]; then
+        # Slight debounce for rapid writes
+        sleep 0.1
+        "$SYNC_SCRIPT" || true
+    fi
 done

@@ -132,8 +132,8 @@ hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(noctCall .. "screenshot-fullscree
 -- Theming and Wallpaper (JaKooLit: Super+W for wallpaper select, Super+Alt+W for random)
 hl.bind(mainMod .. " + W",             hl.dsp.exec_cmd(noctCall .. "panel-toggle wallpaper"))
 hl.bind(mainMod .. " + SHIFT + W",     hl.dsp.exec_cmd(noctCall .. "panel-toggle wallpaper"))
-hl.bind(mainMod .. " + ALT + W",       hl.dsp.exec_cmd(noctCall .. "wallpaper-random && sleep 0.2 && " .. noctCall .. "templates-apply"))
-hl.bind("CONTROL + ALT + W",           hl.dsp.exec_cmd(noctCall .. "wallpaper-random && sleep 0.2 && " .. noctCall .. "templates-apply"))
+hl.bind(mainMod .. " + ALT + W",       hl.dsp.exec_cmd(noctCall .. "wallpaper-random && sleep 0.3 && " .. noctCall .. "templates-apply && ~/dotfiles/scripts/DynamicThemeSync.sh"))
+hl.bind("CONTROL + ALT + W",           hl.dsp.exec_cmd(noctCall .. "wallpaper-random && sleep 0.3 && " .. noctCall .. "templates-apply && ~/dotfiles/scripts/DynamicThemeSync.sh"))
 
 -- Game Mode (JaKooLit: Super+Shift+G or Super+G)
 hl.bind(mainMod .. " + SHIFT + G",     hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/scripts/GameMode.sh"))

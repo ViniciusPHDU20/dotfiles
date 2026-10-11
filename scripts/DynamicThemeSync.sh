@@ -44,7 +44,11 @@ DYNAMIC_ACTIVE_2 = "rgba(${C_COLOR4}ee)"
 DYNAMIC_INACTIVE = "rgba(${C_INACTIVE}88)"
 EOF
 
-# Reload Hyprland to apply border colors
+# Apply dynamic border colors live into Hyprland via Lua IPC (zero reload, no crash)
 if command -v hyprctl >/dev/null 2>&1; then
-    hyprctl reload >/dev/null 2>&1 || true
+    hyprctl eval "hl.config({ general = { col = { active_border = { colors = { \"rgba(${C_ACTIVE}ee)\", \"rgba(${C_COLOR4}ee)\" }, angle = 45 }, inactive_border = \"rgba(${C_INACTIVE}88)\" } } })" >/dev/null 2>&1 || true
 fi
+
+# Signal Kitty terminals to reload colors dynamically without restarting
+pkill -SIGUSR1 kitty 2>/dev/null || true
+
