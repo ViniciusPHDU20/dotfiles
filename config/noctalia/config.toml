@@ -2,25 +2,25 @@
 ui_scale = 1.20
 
 [bar.default]
-center = [ "workspaces", "spacer_1", "active_window" ]
-concave_edge_corners = true
-end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
-margin_edge = 0
-margin_ends = 0
-radius_bottom_left = 12
-radius_bottom_right = 12
-radius_top_left = 0
-radius_top_right = 0
-scale = 1.10
-start = [ "launcher", "clock", "spacer_1", "group:g1" ]
-thickness = 35
+start = [ "launcher", "spacer_1", "workspaces", "spacer_1", "active_window" ]
+center = [ "clock" ]
+end = [ "media", "spacer_1", "group:g1", "tray", "notifications", "network", "volume", "session" ]
+concave_edge_corners = false
+margin_edge = 8
+margin_ends = 14
+radius_top_left = 14
+radius_top_right = 14
+radius_bottom_left = 14
+radius_bottom_right = 14
+scale = 1.05
+thickness = 32
 
     [[bar.default.capsule_group]]
     border = ""
     fill = "on_secondary"
     id = "g1"
     members = [ "temp", "sysmon_2", "sysmon_3" ]
-    opacity = 1.0
+    opacity = 0.95
     padding = 6.0
 
 [shell]
@@ -91,7 +91,7 @@ wallpaper_scheme = "m3-tonal-spot"
 
 [widget.clock]
 color = "secondary"
-format = "{:%H:%M %A %m/%d/%y}"
+format = "{:%H:%M • %a}"
 
 [widget.launcher]
 color = "secondary"
@@ -123,6 +123,7 @@ type = "sysmon"
 
 [widget.sysmon_3]
 glyph = "cpu-2"
+show_value = false
 stat = "ram_used"
 type = "sysmon"
 
@@ -134,10 +135,10 @@ capsule_fill = "on_secondary"
 color = "secondary"
 
 [widget.workspaces]
-active_pill_size = 2.5
+active_pill_size = 2.4
 capsule = true
 capsule_fill = "on_primary"
-inactive_pill_size = 1.0
+inactive_pill_size = 0.85
 pill_scale = 0.80
 show_labels = false
 
