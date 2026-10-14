@@ -8,12 +8,12 @@ end = [ "media", "spacer_1", "group:g1", "tray", "notifications", "network", "vo
 concave_edge_corners = false
 margin_edge = 8
 margin_ends = 14
-radius_top_left = 16
-radius_top_right = 16
-radius_bottom_left = 16
-radius_bottom_right = 16
+radius_top_left = 12
+radius_top_right = 12
+radius_bottom_left = 12
+radius_bottom_right = 12
 scale = 1.05
-thickness = 34
+thickness = 32
 
     [[bar.default.capsule_group]]
     border = ""
@@ -84,7 +84,7 @@ gpu_poll_seconds = 2
 [theme]
 mode = "dark"
 source = "community"
-community_palette = "Catppuccin"
+community_palette = "Tokyo-Night"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
@@ -138,15 +138,15 @@ capsule_fill = "on_secondary"
 color = "secondary"
 
 [widget.workspaces]
-active_pill_size = 2.6
+active_pill_size = 2.4
 capsule = true
 capsule_fill = "on_primary"
 change_color_on_hover = false
 empty_color = "surface_variant"
 focused_color = "primary"
-inactive_pill_size = 0.90
+inactive_pill_size = 0.85
 occupied_color = "secondary"
-pill_scale = 0.85
+pill_scale = 0.80
 show_labels = false
 
 [wallpaper]

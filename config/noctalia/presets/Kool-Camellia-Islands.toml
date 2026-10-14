@@ -2,33 +2,40 @@
 ui_scale = 1.20
 
 [bar.default]
-start = [ "launcher", "spacer_1", "workspaces", "spacer_1", "active_window" ]
-center = [ "clock" ]
-end = [ "media", "spacer_1", "group:g1", "spacer_1", "group:g2" ]
-concave_edge_corners = false
+background_opacity = 0.0
+start = [ "group:island_left", "spacer_1", "active_window" ]
+center = [ "group:island_center" ]
+end = [ "media", "spacer_1", "group:island_right" ]
 margin_edge = 8
 margin_ends = 14
-radius_top_left = 16
-radius_top_right = 16
-radius_bottom_left = 16
-radius_bottom_right = 16
 scale = 1.05
 thickness = 34
 
     [[bar.default.capsule_group]]
-    border = ""
-    fill = "on_secondary"
-    id = "g1"
-    members = [ "temp", "sysmon_2", "sysmon_3" ]
-    opacity = 0.95
+    id = "island_left"
+    members = [ "launcher", "workspaces" ]
+    fill = "surface"
+    border = "secondary"
+    border_width = 1.0
+    opacity = 0.92
     padding = 6.0
 
     [[bar.default.capsule_group]]
-    border = ""
-    fill = "on_secondary"
-    id = "g2"
-    members = [ "tray", "network", "volume", "notifications", "session" ]
-    opacity = 0.95
+    id = "island_center"
+    members = [ "clock" ]
+    fill = "surface"
+    border = "secondary"
+    border_width = 1.0
+    opacity = 0.92
+    padding = 8.0
+
+    [[bar.default.capsule_group]]
+    id = "island_right"
+    members = [ "temp", "sysmon_2", "sysmon_3", "volume", "network", "notifications", "session" ]
+    fill = "surface"
+    border = "secondary"
+    border_width = 1.0
+    opacity = 0.92
     padding = 6.0
 
 [shell]
@@ -146,8 +153,7 @@ color = "secondary"
 
 [widget.workspaces]
 active_pill_size = 2.4
-capsule = true
-capsule_fill = "on_primary"
+capsule = false
 change_color_on_hover = false
 empty_color = "surface_variant"
 focused_color = "primary"

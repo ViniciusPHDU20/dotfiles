@@ -7,13 +7,13 @@ center = [ "clock" ]
 end = [ "media", "spacer_1", "group:g1", "tray", "notifications", "network", "volume", "session" ]
 concave_edge_corners = false
 margin_edge = 8
-margin_ends = 14
-radius_top_left = 16
-radius_top_right = 16
-radius_bottom_left = 16
-radius_bottom_right = 16
+margin_ends = 16
+radius_top_left = 20
+radius_top_right = 20
+radius_bottom_left = 20
+radius_bottom_right = 20
 scale = 1.05
-thickness = 34
+thickness = 38
 
     [[bar.default.capsule_group]]
     border = ""
@@ -21,7 +21,7 @@ thickness = 34
     id = "g1"
     members = [ "temp", "sysmon_2", "sysmon_3" ]
     opacity = 0.95
-    padding = 6.0
+    padding = 8.0
 
 [shell]
 clipboard_image_action_command = "swash --stdin --name \"swash-$(date +'%Y-%m-%d_%H:%M:%S').png\""
@@ -91,7 +91,7 @@ community_palette = "Catppuccin"
 
 [widget.clock]
 color = "secondary"
-format = "{:%H:%M • %a}"
+format = "{:%A, %H:%M}"
 
 [widget.launcher]
 color = "secondary"
@@ -138,16 +138,16 @@ capsule_fill = "on_secondary"
 color = "secondary"
 
 [widget.workspaces]
-active_pill_size = 2.6
+active_pill_size = 2.0
 capsule = true
 capsule_fill = "on_primary"
 change_color_on_hover = false
 empty_color = "surface_variant"
 focused_color = "primary"
-inactive_pill_size = 0.90
+inactive_pill_size = 1.2
 occupied_color = "secondary"
-pill_scale = 0.85
-show_labels = false
+pill_scale = 1.0
+show_labels = true
 
 [wallpaper]
 directory = "/home/viniciusphdu/dotfiles/wallpapers"

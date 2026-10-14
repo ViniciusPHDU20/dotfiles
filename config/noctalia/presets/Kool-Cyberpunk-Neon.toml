@@ -8,17 +8,17 @@ end = [ "media", "spacer_1", "group:g1", "tray", "notifications", "network", "vo
 concave_edge_corners = false
 margin_edge = 6
 margin_ends = 10
-radius_top_left = 4
-radius_top_right = 4
-radius_bottom_left = 4
-radius_bottom_right = 4
+radius_top_left = 0
+radius_top_right = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
 scale = 1.05
-thickness = 28
+thickness = 26
 border = "primary"
-border_width = 1.5
+border_width = 2.0
 
     [[bar.default.capsule_group]]
-    border = ""
+    border = "primary"
     fill = "on_secondary"
     id = "g1"
     members = [ "temp", "sysmon_2", "sysmon_3" ]
@@ -92,41 +92,41 @@ wallpaper_scheme = "m3-vibrant"
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
 
 [widget.clock]
-color = "secondary"
-format = "{:%H:%M • %a}"
+color = "primary"
+format = "[ %H:%M:%S ]"
 
 [widget.launcher]
-color = "secondary"
+color = "primary"
 
 [widget.media]
 hide_when_no_media = true
 title_scroll = "on_hover"
 
 [widget.network]
-color = "secondary"
+color = "primary"
 
 [widget.notifications]
-color = "secondary"
+color = "primary"
 
 [widget.session]
-color = "secondary"
+color = "primary"
 
 [widget.spacer_1]
 type = "spacer"
 
 [widget.temp]
-color = "secondary"
+color = "primary"
 show_value = false
 
 [widget.sysmon_2]
-color = "secondary"
+color = "primary"
 glyph = "gpu-usage"
 show_value = false
 stat = "gpu_temp"
 type = "sysmon"
 
 [widget.sysmon_3]
-color = "secondary"
+color = "primary"
 glyph = "cpu-2"
 show_value = false
 stat = "ram_used"
@@ -137,18 +137,18 @@ capsule = true
 capsule_fill = "on_secondary"
 
 [widget.volume]
-color = "secondary"
+color = "primary"
 
 [widget.workspaces]
-active_pill_size = 2.8
+active_pill_size = 3.2
 capsule = true
 capsule_fill = "on_primary"
 change_color_on_hover = false
 empty_color = "surface_variant"
 focused_color = "primary"
-inactive_pill_size = 0.80
+inactive_pill_size = 0.70
 occupied_color = "secondary"
-pill_scale = 0.75
+pill_scale = 0.70
 show_labels = false
 
 [wallpaper]
