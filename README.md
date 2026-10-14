@@ -1,4 +1,4 @@
-# SnyX Dotfiles
+# Soberano Dotfiles
 
 Dotfiles de alto desempenho para **Arch / CachyOS** configurados e otimizados para o processador **AMD Ryzen 9 9950X (Zen 5 / x86-64-v4)**.
 

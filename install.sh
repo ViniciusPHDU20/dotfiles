@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# SnyX Dotfiles Installer
+# Soberano Dotfiles Installer
 # Environment: Arch / CachyOS (Zen 5 x86-64-v4) - Hyprland & Noctalia
 # ==============================================================================
 set -e
@@ -8,7 +8,7 @@ set -e
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKUP_DIR="$HOME/.config.bak-$(date +%Y%m%d_%H%M%S)"
 
-echo "==> Iniciando sincronização do SnyX Dotfiles..."
+echo "==> Iniciando sincronização do Soberano Dotfiles..."
 
 # Criar backup antes de symlinkar
 mkdir -p "$BACKUP_DIR"
