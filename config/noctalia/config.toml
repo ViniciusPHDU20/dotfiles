@@ -107,21 +107,24 @@ color = "secondary"
 color = "secondary"
 
 [widget.session]
-color = "error"
+color = "secondary"
 
 [widget.spacer_1]
 type = "spacer"
 
 [widget.temp]
+color = "secondary"
 show_value = false
 
 [widget.sysmon_2]
+color = "secondary"
 glyph = "gpu-usage"
 show_value = false
 stat = "gpu_temp"
 type = "sysmon"
 
 [widget.sysmon_3]
+color = "secondary"
 glyph = "cpu-2"
 show_value = false
 stat = "ram_used"
