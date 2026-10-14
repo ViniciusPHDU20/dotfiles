@@ -8,12 +8,12 @@ end = [ "media", "spacer_1", "group:g1", "tray", "notifications", "network", "vo
 concave_edge_corners = false
 margin_edge = 8
 margin_ends = 14
-radius_top_left = 10
-radius_top_right = 10
-radius_bottom_left = 10
-radius_bottom_right = 10
+radius_top_left = 14
+radius_top_right = 14
+radius_bottom_left = 14
+radius_bottom_right = 14
 scale = 1.05
-thickness = 30
+thickness = 34
 
     [[bar.default.capsule_group]]
     border = ""
@@ -83,18 +83,18 @@ gpu_poll_seconds = 2
 
 [theme]
 mode = "dark"
-source = "community"
-community_palette = "Nord"
+source = "wallpaper"
+wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
 
 [widget.clock]
-color = "secondary"
-format = "{:%H:%M • %a}"
+color = "primary"
+format = "{:%H:%M • %a %d}"
 
 [widget.launcher]
-color = "secondary"
+color = "primary"
 
 [widget.media]
 hide_when_no_media = true
@@ -102,31 +102,32 @@ title_scroll = "on_hover"
 
 [widget.network]
 color = "secondary"
+show_label = true
 
 [widget.notifications]
-color = "secondary"
+color = "tertiary"
 
 [widget.session]
-color = "secondary"
+color = "error"
 
 [widget.spacer_1]
 type = "spacer"
 
 [widget.temp]
-color = "secondary"
-show_value = false
+color = "tertiary"
+show_value = true
 
 [widget.sysmon_2]
-color = "secondary"
+color = "primary"
 glyph = "gpu-usage"
-show_value = false
+show_value = true
 stat = "gpu_temp"
 type = "sysmon"
 
 [widget.sysmon_3]
 color = "secondary"
 glyph = "cpu-2"
-show_value = false
+show_value = true
 stat = "ram_used"
 type = "sysmon"
 
@@ -135,7 +136,8 @@ capsule = true
 capsule_fill = "on_secondary"
 
 [widget.volume]
-color = "secondary"
+color = "primary"
+show_label = true
 
 [widget.workspaces]
 active_pill_size = 2.4
@@ -144,10 +146,11 @@ capsule_fill = "on_primary"
 change_color_on_hover = false
 empty_color = "surface_variant"
 focused_color = "primary"
-inactive_pill_size = 0.85
+inactive_pill_size = 1.0
 occupied_color = "secondary"
-pill_scale = 0.80
-show_labels = false
+pill_scale = 0.90
+show_icons = true
+show_labels = true
 
 [wallpaper]
 directory = "/home/viniciusphdu/dotfiles/wallpapers"
