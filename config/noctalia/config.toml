@@ -141,7 +141,11 @@ color = "secondary"
 active_pill_size = 2.4
 capsule = true
 capsule_fill = "on_primary"
+change_color_on_hover = false
+empty_color = "surface_variant"
+focused_color = "primary"
 inactive_pill_size = 0.85
+occupied_color = "secondary"
 pill_scale = 0.80
 show_labels = false
 
