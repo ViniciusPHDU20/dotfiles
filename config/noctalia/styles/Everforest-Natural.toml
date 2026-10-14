@@ -14,9 +14,11 @@ radius_bottom_left = 12
 radius_bottom_right = 12
 scale = 1.05
 thickness = 32
+border = "#a7c080"
+border_width = 1.5
 
     [[bar.default.capsule_group]]
-    border = ""
+    border = "#83c092"
     fill = "on_secondary"
     id = "g1"
     members = [ "temp", "sysmon_2", "sysmon_3" ]
@@ -90,42 +92,42 @@ wallpaper_scheme = "m3-tonal-spot"
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
 
 [widget.clock]
-color = "secondary"
+color = "#dbbc7f"
 format = "{:%H:%M • %a}"
 
 [widget.launcher]
-color = "secondary"
+color = "#a7c080"
 
 [widget.media]
 hide_when_no_media = true
 title_scroll = "on_hover"
 
 [widget.network]
-color = "secondary"
+color = "#7fbbb3"
 show_label = true
 
 [widget.notifications]
-color = "secondary"
+color = "#d699b6"
 
 [widget.session]
-color = "secondary"
+color = "#e67e80"
 
 [widget.spacer_1]
 type = "spacer"
 
 [widget.temp]
-color = "secondary"
+color = "#e69875"
 show_value = true
 
 [widget.sysmon_2]
-color = "secondary"
+color = "#a7c080"
 glyph = "gpu-usage"
 show_value = true
 stat = "gpu_temp"
 type = "sysmon"
 
 [widget.sysmon_3]
-color = "secondary"
+color = "#83c092"
 glyph = "cpu-2"
 show_value = true
 stat = "ram_used"
@@ -136,7 +138,7 @@ capsule = true
 capsule_fill = "on_secondary"
 
 [widget.volume]
-color = "secondary"
+color = "#7fbbb3"
 show_label = true
 
 [widget.workspaces]
@@ -144,11 +146,11 @@ active_pill_size = 2.4
 capsule = true
 capsule_fill = "on_primary"
 change_color_on_hover = false
-empty_color = "surface_variant"
-focused_color = "primary"
+empty_color = "#2d353b"
+focused_color = "#a7c080"
 inactive_pill_size = 0.85
-occupied_color = "secondary"
-pill_scale = 0.80
+occupied_color = "#83c092"
+pill_scale = 0.85
 show_icons = true
 show_labels = false
 

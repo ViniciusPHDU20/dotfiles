@@ -13,17 +13,18 @@ radius_top_right = 0
 radius_bottom_left = 0
 radius_bottom_right = 0
 scale = 1.05
-thickness = 26
-border = "primary"
+thickness = 28
+border = "#00f0ff"
 border_width = 2.0
+background_opacity = 0.88
 
     [[bar.default.capsule_group]]
-    border = "primary"
+    border = "#ff007f"
     fill = "on_secondary"
     id = "g1"
     members = [ "temp", "sysmon_2", "sysmon_3" ]
     opacity = 0.95
-    padding = 4.0
+    padding = 6.0
 
 [shell]
 clipboard_image_action_command = "swash --stdin --name \"swash-$(date +'%Y-%m-%d_%H:%M:%S').png\""
@@ -92,42 +93,42 @@ wallpaper_scheme = "m3-vibrant"
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
 
 [widget.clock]
-color = "primary"
+color = "#ff007f"
 format = "[ %H:%M:%S ]"
 
 [widget.launcher]
-color = "primary"
+color = "#00f0ff"
 
 [widget.media]
 hide_when_no_media = true
 title_scroll = "on_hover"
 
 [widget.network]
-color = "primary"
+color = "#00f0ff"
 show_label = true
 
 [widget.notifications]
-color = "primary"
+color = "#ff007f"
 
 [widget.session]
-color = "primary"
+color = "#ff007f"
 
 [widget.spacer_1]
 type = "spacer"
 
 [widget.temp]
-color = "primary"
+color = "#ff007f"
 show_value = true
 
 [widget.sysmon_2]
-color = "primary"
+color = "#00f0ff"
 glyph = "gpu-usage"
 show_value = true
 stat = "gpu_temp"
 type = "sysmon"
 
 [widget.sysmon_3]
-color = "primary"
+color = "#00ff9f"
 glyph = "cpu-2"
 show_value = true
 stat = "ram_used"
@@ -138,7 +139,7 @@ capsule = true
 capsule_fill = "on_secondary"
 
 [widget.volume]
-color = "primary"
+color = "#00f0ff"
 show_label = true
 
 [widget.workspaces]
@@ -146,11 +147,11 @@ active_pill_size = 3.2
 capsule = true
 capsule_fill = "on_primary"
 change_color_on_hover = false
-empty_color = "surface_variant"
-focused_color = "primary"
+empty_color = "#1f2335"
+focused_color = "#00f0ff"
 inactive_pill_size = 0.70
-occupied_color = "secondary"
-pill_scale = 0.70
+occupied_color = "#ff007f"
+pill_scale = 0.75
 show_icons = true
 show_labels = false
 
