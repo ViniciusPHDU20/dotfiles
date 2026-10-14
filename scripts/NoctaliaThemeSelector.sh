@@ -63,6 +63,10 @@ cp -f "$selected_file" "$USER_CONFIG"
 # Map signature wallpaper for each preset
 sig_wall=""
 case "$clean_name" in
+    "Kool-Chroma-Spectrum")
+        sig_wall="$WALLPAPERS_DIR/Under_Starlit_Sky.png"
+        [ ! -f "$sig_wall" ] && sig_wall="$WALLPAPERS_DIR/Purple-sea-moon-stars.png"
+        ;;
     "Kool-Catppuccin-Mocha")
         sig_wall="$WALLPAPERS_DIR/Pastel-Window.png"
         [ ! -f "$sig_wall" ] && sig_wall="$WALLPAPERS_DIR/Purple-sea-moon-stars.png"

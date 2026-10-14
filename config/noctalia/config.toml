@@ -8,12 +8,12 @@ end = [ "media", "spacer_1", "group:g1", "tray", "notifications", "network", "vo
 concave_edge_corners = false
 margin_edge = 8
 margin_ends = 14
-radius_top_left = 12
-radius_top_right = 12
-radius_bottom_left = 12
-radius_bottom_right = 12
+radius_top_left = 10
+radius_top_right = 10
+radius_bottom_left = 10
+radius_bottom_right = 10
 scale = 1.05
-thickness = 32
+thickness = 30
 
     [[bar.default.capsule_group]]
     border = ""
@@ -84,7 +84,7 @@ gpu_poll_seconds = 2
 [theme]
 mode = "dark"
 source = "community"
-community_palette = "Tokyo-Night"
+community_palette = "Nord"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
